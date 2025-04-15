@@ -40,5 +40,5 @@ Java 版本: jdk 23
 java
 
 if (divisor == 0) {
-    throw new IllegalArgumentException("除数不能为零");
+throw new IllegalArgumentException("除数不能为零");
 }
