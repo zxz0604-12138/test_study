@@ -1,7 +1,11 @@
 package org.example.test_study;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.testng.annotations.Test;
+
+
+import static org.springframework.test.util.AssertionErrors.*;
+
 
 /**
  * 计算器单元测试
@@ -26,10 +30,10 @@ public class CalculatorTest {
     // 除法测试
     @Test
     public void testDivideNormal() {
-        assertEquals("正常除法", 2.5, Calculator.divide(5, 2), 0.001);
+        assertEquals("正常除法", 2.5, Calculator.divide(5, 2));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void testDivideByZero() {
         Calculator.divide(5, 0);
     }
