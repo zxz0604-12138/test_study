@@ -1,35 +1,44 @@
 ---
-name: Bug Report
-about: Create a report to help us improve
-title: ''
+name: "🐞 Bug Report"
+about: 报告代码中的缺陷
+title: "[BUG] 除法方法未处理除数为零的情况"
 labels: bug
-assignees: ''
-
+assignees: ""
 ---
+问题描述
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+代码中的 divide 方法在进行除法运算时，没有对除数为零的情况进行处理，这会导致程序在运行时可能出现异常。
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+重现步骤
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+1.调用 divide 方法。
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+2.传入任意整数作为被除数。
 
-**Environment (please complete the following information):**
-- OS: [e.g. Windows 10]
-- Java Version [e.g. 11]
-- Build Tool [e.g. Maven 3.8.1]
+3.传入 0 作为除数。
 
-**Additional context**
-Add any other context about the problem here.
+预期行为
 
-**Test Case**
-Related test case that failed (if applicable)
+当除数为零时，程序应抛出 IllegalArgumentException 异常，并给出 “除数不能为零” 的提示。
+
+实际行为
+
+程序会进行除法运算，由于除数为零，会抛出 ArithmeticException 异常。
+
+环境信息
+
+OS: windows 11
+
+Java 版本: jdk 23
+
+项目版本: 0.0.0
+
+附加信息
+
+可以在代码中添加对除数为零的检查：
+
+java
+
+if (divisor == 0) {
+    throw new IllegalArgumentException("除数不能为零");
+}
