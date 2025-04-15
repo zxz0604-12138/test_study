@@ -24,9 +24,9 @@ public class Calculator {
      * @throws IllegalArgumentException 除数为零时抛出
      */
     public static double divide(int dividend, int divisor) {
-        if (divisor == 0) {
-            throw new IllegalArgumentException("除数不能为零");
-        }
+//        if (divisor == 0) {
+//            throw new IllegalArgumentException("除数不能为零");
+//        }
         return (double) dividend / divisor;
     }
 
